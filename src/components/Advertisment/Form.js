@@ -61,7 +61,7 @@ class Form extends Component {
               id="title-field"
               name="Title"
               placeholder="Например, «ищу работу»"
-              maxLength="100"
+              maxLength="140"
               required
               autoFocus
             />
