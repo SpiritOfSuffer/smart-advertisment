@@ -30,4 +30,4 @@ Running app
 
 Goto http://localhost:3000/ 
 
-or simply open  the live demo: https://topdeuse.github.io/smart-advertisment/
+or simply open  the live demo: https://topdeuse.github.io/smart-advertisment/ and enjoy :)
