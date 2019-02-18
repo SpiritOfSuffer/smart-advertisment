@@ -7,61 +7,60 @@ class List extends Component {
 
   render() {
     const titles = this.props.data.titlesArray.map((title, index) => (
-      <h2
+      <div
         key={`title-${index}`}
         propfordeletingbyindex={index}
-        className="phoneNumber-in-card"
       >
         {title}
-      </h2>
+      </div>
     ));
 
     const descriptions = this.props.data.descriptionsArray.map(
       (description, index) => (
-        <p key={`description-${index}`} propfordeletingbyindex={index}>
+        <div key={`description-${index}`} propfordeletingbyindex={index}>
           {description}
-        </p>
+        </div>
       )
     );
 
     const names = this.props.data.namesArray.map(
       (name, index) => (
-        <p key={`name-${index}`} propfordeletingbyindex={index}>
+        <div key={`name-${index}`} propfordeletingbyindex={index}>
           {name}
-        </p>
+        </div>
       )
     );
 
     const phoneNumbers = this.props.data.phoneNumbersArray.map(
       (phoneNumber, index) => (
-        <span
+        <div
           key={`phoneNumber-${index}`}
           propfordeletingbyindex={index}
-          className="phoneNumber-in-card"
+          className="phoneNumber"
         >
           {phoneNumber}
-        </span>
+        </div>
       )
     );
 
     const cities = this.props.data.cityArray.map((city, index) => (
-      <span
+      <div
         propfordeletingbyindex={index}
         key={`city-${index}`}
-        className="city-in-card"
+        className="city"
       >
         {city}
-      </span>
+      </div>
     ));
 
     const images = this.props.data.imagesArray.map((image, index) => (
-      <img
+      <div><img
         alt="person"
         key={`image-${index}`}
         propfordeletingbyindex={index}
         className="image-in-card"
         src={image}
-      />
+      /></div>
     ));
 
     const toArrayOfObjects = titles.map((item, index) => ({
@@ -74,30 +73,22 @@ class List extends Component {
     }));
 
     const renderArrayOfObjects = toArrayOfObjects.map((item, key) => (
-      <li key={`item-in-array-of-object-${key}`}>
-        {item.images}
-        {item.titles}
-        {item.descriptions}
-        {item.names}
-        <div className="bottom-of-card">
-          {item.cities}
-          {item.phoneNumbers}
-        </div>
-        <span
-          role="img"
-          aria-label="close-emoji"
-          onClick={() => this.handleOnDeleteCard(item)}
-          className="deleteCardSymbol"
-        >
-          ✘
-        </span>
-      </li>
+     <div className={'objects'}key={`item-in-array-of-object-${key}`}>
+        <div className={'title'}>{item.titles}</div>
+        <div className={'description'}>{item.descriptions}</div>
+        <div className={'description'}>{item.names}</div>
+        <div className={'image'}>{item.images}</div>
+        <div >{item.cities}</div>
+        <div >{item.phoneNumbers}</div>
+        <div className={'delete'} onClick={() => this.handleOnDeleteCard(item)}>Удалить</div>
+        <div className={'edit'} >Редактировать</div>
+      </div>
     ));
 
     return (
-      <section>
-        <ul>{renderArrayOfObjects}</ul>
-      </section>
+      <div className={'root-title'}>Объявление
+        {renderArrayOfObjects}
+      </div>
     );
   }
 }

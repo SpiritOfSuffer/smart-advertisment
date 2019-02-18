@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
+import Kappa from "../../imgs/Kappa.jpg"
 
 class Form extends Component {
     state = {
@@ -7,8 +8,8 @@ class Form extends Component {
       description: "",
       name: "",
       phoneNumber: "",
-      city: "",
-      image: null
+      city: "Gotham City",
+      image: Kappa
     };
 
   handleTitleChange = event => {
@@ -53,47 +54,45 @@ class Form extends Component {
   render() {
     return (
         <form onSubmit={this.onSubmitHandle}>
-          <label htmlFor="title-field">
-            Название:
-            <textarea
-              value={this.state.title}
-              onChange={this.handleTitleChange}
-              id="title-field"
-              name="Title"
-              placeholder="Например, «ищу работу»"
-              maxLength="140"
-              required
-              autoFocus
-            />
-          </label>
+          <div className={'input-sub-title'}>
+            <div style={{marginTop: '24px'}}>Заголовок</div>
+            <input type='text' className='sub-title' value={this.state.title}
+                    maxLength={140}  
+                    onChange={this.handleTitleChange}
+                    onBlur={this.onBlurSubTitleChange}
+                    onFocus={this.onFocusSubTitleChange}
+                    autoFocus
+                    required
+                    />
+              <div id={'sub-title-decrip-info'}>
+                <div>Обзятельное поле</div>
+                <div>Не более 140 символов</div>
+              </div>     
+          </div>
+          
+          <div className={'input-sub-title'}>
+            <div style={{marginTop: '29px'}}>Текст объявления</div>
+            <textarea className='text-area'  style={{marginTop: '8px'}} value={this.state.description}
+              maxLength={300} onChange={this.handleDescriptionChange}/>
+            <div id={'text-area-decrip'}>
+              <div>Не более 300 символов</div>
+            </div>
+          </div>
+
+          <div className={'input-sub-title'}>
+            <div style={{marginTop: '29px'}}>Ваше имя</div>
+            <input type='text' className='sub-title' value={this.state.name}
+                   maxLength={50}  
+                   onChange={this.handleNameChange}
+                   autoFocus/>
+            <div id={'text-area-decrip'}>
+              <div>Не более 50 символов</div>
+            </div>
+          </div>
   
-          <label htmlFor="description-field">
-            Описание:
-            <textarea
-              value={this.state.description}
-              onChange={this.handleDescriptionChange}
-              id="description-field"
-              placeholder="Добавьте подробное описание"
-              name="Description"
-              maxLength="300"
-            />
-          </label>
-          <label htmlFor="name-field">
-            Имя:
-            <textarea
-              value={this.state.name}
-              onChange={this.handleNameChange}
-              id="name-field"
-              placeholder="Ваше имя"
-              name="Name"
-              maxLength="50"
-              />
-          </label>
-  
-          <div className="bottom-block-wrapper">
-            <div className="element-inside-bottom-block-wrapper">
-              <label htmlFor="phone-number-field">
-                Номер телефона:
+          <div className={'input-sub-title'}>
+            
+          <div style={{marginTop: '29px'}}>Номер телефона:</div>
                 <InputMask
                   value={this.state.phoneNumber}
                   onChange={this.handlePhoneNumberChange}
@@ -103,15 +102,11 @@ class Form extends Component {
                   required
                   title="Введи номер телефона полностью в формате РФ"
                 />
-              </label>
+              
             </div>
-            <div className="element-inside-bottom-block-wrapper">
-              <label htmlFor="city-select">
-                Ваш город:<select
-                  value={this.state.city}
-                  onChange={this.handleCityChange}
-                  id="city-select"
-                >
+            <div className={'input-sub-title'}>
+                <div style={{marginTop: '28px'}}>Город</div>
+                <select value={this.state.city} onChange={this.handleCityChange} id="city-select">
                   <option value="Gotham City">Gotham City</option>
                   <option value="Metropolis">Metropolis</option>
                   <option value="Smallville">Smallville</option>
@@ -125,24 +120,24 @@ class Form extends Component {
                   <option value="Liberty City">Liberty City</option>
                   <option value="San-Andreas">San-Andreas</option>
                 </select>
-              </label>
             </div>
-            <div className="element-inside-bottom-block-wrapper">
-              <label htmlFor="upload-image">
-              Ваша фотография:<input
+            <div className={'fake-input'}>
+                <div style={{marginTop: '32px', position:'relative'}}>
+                    <div className={'fake-input-div'}>Прикрепить фото</div></div>
+            
+                <input
                   onChange={this.imageSelectedHandler}
                   id="imageFile"
                   type="file"
                   name="imageFile"
                   accept="image/*"
                 />
-              </label>
-            </div>
+         </div>
   
-            <button type="submit" value="submit">
+            <button type="submit" value="submit" style={{marginTop: '32px'}}>
               Отправить
             </button>
-          </div>
+          
         </form>
       );
   }

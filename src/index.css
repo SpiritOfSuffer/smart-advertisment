@@ -1,114 +1,352 @@
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #f6f6f6;
-}
 
-form {
-  margin: 20px 0 20px 30px;
-}
-
-textarea {
-  border: 1px solid #bebebe;
-  border-radius: 2px;
-  padding: 16px 0px 10px 20px;
-  margin: 20px 0 20px 0;
-  font-family: inherit;
-  resize: none;
-  word-break: break-all;
-}
-
-input {
-  margin: 20px 0 20px 0;
-}
-select {
-  margin: 20px 0 20px 0;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-}
-
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="file"]:focus,
-textarea:focus,
-select:focus {
-  box-shadow: 0 0 8px #88d5e9;
-  border: 1px solid #88d5e9;
-}
-
-#title-field {
-  max-width: 770px;
-  height: 20px;
-  padding: 10px;
-  padding-left: 20px;
-  
-}
-
-#description-field {
-  max-width: 780px;
-  min-height: 80px;
-}
-
-#name-field {
-  max-width: 770px;
-  height: 20px;
-  padding: 10px;
-  padding-left: 20px;
-}
-.bottom-block-wrapper {
-  display: flex;
-}
-.element-inside-bottom-block-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 40px 0px 0px;
-}
-
-#phone-number-field {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-ul {
-  display: flex;
-  margin: 0;
-  padding: 10px;
-  list-style: none;
-}
-
-p {
-  margin: 20px;
-}
-
-h2 {
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-
-li {
-  display: flex;
-  background-color: white;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: 40px;
-  padding: 10px;
-  border: 2px solid lightslategrey;
-  box-sizing: border-box;
+.input-sub-title{
   position: relative;
-  min-width: 320px;
-  max-width: 600px;
-  word-break: break-all; 
+}
+#text-area-decrip,
+#phone-descrip{
+  position: absolute;
+  top: 38px;
+  left: 435px;
+  padding-left: 22px;
+  background: url("./imgs/information.png") left 2px no-repeat;
+}
+
+#sub-title-decrip-done{
+  position: absolute;
+  top: 38px;
+  left: 435px;
+  padding-left: 22px;
+  color: #16c98d;
+  background: url("./imgs/success.png") left 2px no-repeat;
+}
+
+#sub-title-decrip-exclam{
+  position: absolute;
+  top: 38px;
+  left: 435px;
+  padding-left: 22px;
+  color: #fa5e5b;
+  background: url("./imgs/exclamation-mark.png") left 2px no-repeat;
+}
+
+#sub-title-decrip-hidden{
+  position: absolute;
+  top: 38px;
+  left: 435px;
+  padding-left: 22px;
+}
+
+#sub-title-decrip-info{
+  position: absolute;
+  top: 38px;
+  left: 435px;
+  padding-left: 22px;
+  background: url("./imgs/information.png") left 2px no-repeat;
+}
+
+.input-sub-title div{
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #68717c;
+}
+
+.input-sub-title input{
+  margin-top: 8px;
+
+  width: 376px;
+  height: 16px;
+  padding: 9px 16px;
+  border-radius: 3px;
+  border: 1px solid #d4d8db;
+  background-color: rgba(27, 40, 52, 0.01);
+  box-shadow: inset 0 1px 3px 0 rgba(27, 40, 52, 0.08);
+
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #68717c;
+}
+
+.input-sub-title input::placeholder{
+  color: #68717c;
+}
+
+.input-sub-title textarea{
+  resize: none;
+
+  width: 376px;
+  height: 131px;
+  padding: 7px 16px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: 1px solid #d4d8db;
+  background-color: rgba(27, 40, 52, 0.01);
+  box-shadow: inset 0 1px 3px 0 rgba(27, 40, 52, 0.08);
+
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #68717c;
+}
+
+.input-sub-title select{
+  width: 410px;
+  height: 36px;
+  border: 1px solid #d4d8db;
+  border-radius: 3px;
+  background: #ffffff url("./imgs/combined-shape-copy-9.svg") 390px center no-repeat;
+  appearance: none;
+  padding: 8px 16px 10px;
+
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #68717c;
+}
+
+option{
+  padding: 12px 15px;
+  /*background: red;*/
+
+  height: 42px !important;
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #68717c;
+}
+.fake-input{
+  position: relative;
+}
+.fake-input > div{
+  width: 178px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: 1px solid #2d74da;
+
+  background: url("./imgs/clip_15x16.png") 22px center no-repeat ;
+
+  font-family: SourceSansPro,sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2d74da;
+
+  vertical-align: center;
+}
+
+.fake-input-div{
+  float: right;
+  margin: 10px 22px;
+}
+
+.fake-input input{
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity: 0;
+  width: 178px;
+  height: 36px;
+}
+
+.title{
+  font-family: SourceSansPro, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  color: #1b2834;
+}
+
+button{
+  width: 141px;
+  height: 36px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 rgba(27, 40, 52, 0.16);
+  background-image: linear-gradient(to bottom, #2d74da, #2367c8);
+  border: 0;
+
+  font-family: SourceSansPro, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+
+
+
+
+#adItem{
+  margin: 23px 0 55px;
+  position: relative;
+}
+
+#adItem > div{
+  display: inline-block;
+  vertical-align: top;
+}
+#adItem >div:nth-child(2){
+  margin-left: 100px;
+  height: 297px;
+}
+
+
+.title{
+  font-family: SourceSansPro;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #1b2834;
+  max-width: 332px;
+  word-wrap: break-word;
+}
+
+.description {
+  margin-top: 2px;
+  max-width: 332px;
+  word-wrap: break-word;
+ 
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #68717c;
+}
+
+.image {
+  margin-top: 6px;
+    width: 332px;
+    height: 250px;
+
+}
+
+
+.phoneNumber {
+  padding-top: 0;
+  padding-left: 25px;
+  display: inline-block;
+  background: url("./imgs/phone.png") center left no-repeat;
+  margin-top: 5px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #1b2834;
+  vertical-align: top;
+}
+
+.city {
+  
+  padding-left: 25px;
+  background: url("./imgs/maps.png") center left no-repeat;
+  margin-top: 14px;
+  display: inline-block;
+  margin-top: 40px;
+  vertical-align: top;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #1b2834;
+}
+
+.edit {
+  margin-bottom: 227px;
+  margin-left: -10px;
+  bottom: 50px;
+  left: 435px;
+  position: absolute;
+  width: 178px;
+  height: 28px;
+  border: 1px solid #2d74da;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 8px;
+
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2d74da;
+}
+.edit:hover{
+  cursor: not-allowed;
+  background: #2d74da;
+  color: #ffffff;
+}
+
+.delete{
+  margin-bottom: 330px;
+  position: absolute ;
+  
+  margin-top: 14px;
+  margin-left: -10px;
+  bottom: 0;
+  left: 435px;
+  width: 178px;
+  height: 28px;
+  border: 1px solid #fa5e5b;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 8px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fa5e5b;
+}
+.delete:hover{
+  cursor: pointer;
+  background: #fa5e5b;
+  color: #ffffff;
 }
 
 .image-in-card {
@@ -120,96 +358,20 @@ li {
   padding: 10px;
 }
 
-section {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 20px;
-  justify-content: space-between;
-  overflow-x: auto;
-  box-sizing: border-box;
-  background-color: honeydew	;
-  border-bottom: 2px solid mediumaquamarine;
+.objects {
+  position:relative;
+  overflow:hidden;
+  margin-top: 35px;
 }
 
-.deleteCardSymbol {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-  font-size: 20px;
+.root-title{
+  margin-top: 54px;
+  font-family: SourceSansPro;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  color: #1b2834;
 }
-.deleteCardSymbol:hover {
-  box-shadow: inset 0px 0px 13px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-}
-
-button {
-  background-image: linear-gradient(to bottom, #14c296, #247c46);
-  border-radius: 100px;
-  font-family: "Segoe UI",Arial,sans-serif;
-  color: #ffffff;
-  padding: 10px 20px 24px 20px;
-  border: none;
-  cursor: pointer;
-  height: 40px;
-  font: "Segoe UI",Arial,sans-serif;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-button:hover {
-  background: #7eda85;
-  text-decoration: none;
-}
-
-button:active {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-.bottom-of-card {
-  display: flex;
-  /*justify-content: end;*/
-  font-style: italic;
-  margin-right: 20px;
-  font-size: 14px;
-}
-
-.phoneNumber-in-card {
-  margin-left: 20px;
-}
-
-form { 
-  margin: 0 auto; 
-  width:600px;
-  padding-top: 10px;
-  }
-
-label {
-  font-weight: bold;
-  color: #657786;
-  font-size: 18px;
-  font-family: "Segoe UI",Arial,sans-serif;
-}
-
-select {
-  border-radius: 0;
-  background: transparent;
-  height: 34px;
-  padding: 5px;
-  font-size: 15px;
-  font-family: "Segoe UI",Arial,sans-serif;
-  line-height: 1;
-}
-
-input {
-  font-family: "Segoe UI",Arial,sans-serif;
-  line-height: 1;
-  border-radius: 0;
-  line-height: 1;
-  height: 20px;
-  padding: 5px;
-}
-
-
-

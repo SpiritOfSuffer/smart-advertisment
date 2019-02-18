@@ -76,13 +76,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{width:614, margin: '48px auto'}}>
+        <div className="root-title">Подать объявление</div>
+        <Form updateDataWithNewItem={this.updateDataWithNewItem} />
         <List
           updateDataWithDeletedItem={this.updateDataWithDeletedItem}
           updateDataWithEditedItem={this.updateDataWithEditedItem}
           data={this.state}
         />
-        <Form updateDataWithNewItem={this.updateDataWithNewItem} />
       </div>
     );
   }
