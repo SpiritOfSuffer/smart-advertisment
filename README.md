@@ -28,4 +28,6 @@ Dependency installing
 ### `yarn start`
 Running app
 
-Goto http://localhost:3000/ and enjoy :)
+Goto http://localhost:3000/ 
+
+or simply open  the live demo: https://topdeuse.github.io/smart-advertisment/
